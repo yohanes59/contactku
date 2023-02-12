@@ -1,4 +1,5 @@
 <?php
+require 'session.php';
 include('koneksi.php');
 include('includes/header.php');
 ?>
@@ -20,7 +21,7 @@ include('includes/header.php');
 				{
 					?>
 					<header class="hero">
-						<a href="edit.php">
+						<a href="edit.php?id=<?= $contact['id']; ?>">
 							<i class="fas fa-chevron-circle-left back-btn"></i>
 						</a>
 						<div class="hero-info">

@@ -12,7 +12,7 @@ if (isset($_POST['add_contact'])) {
 	$query_run = mysqli_query($con, $query);
 
 	if ($query_run) {
-		header("location: index.php");
+		header("location: home.php");
 		exit(0);
 	} else {
 		header("location: new.php");
@@ -32,7 +32,7 @@ if (isset($_POST['update_contact'])) {
 	$query_run = mysqli_query($con, $query);
 
 	if ($query_run) {
-		header("location: index.php");
+		header("location: home.php");
 	}
 }
 
@@ -44,7 +44,7 @@ if (isset($_POST['delete_contact'])) {
 	$query_run = mysqli_query($con, $query);
 
 	if ($query_run) {
-		header("location: index.php");
+		header("location: home.php");
 		exit(0);
 	}
 }

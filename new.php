@@ -1,4 +1,5 @@
 <?php 
+require 'session.php';
 include('koneksi.php');
 include('includes/header.php');
 ?>
@@ -8,7 +9,7 @@ include('includes/header.php');
 
 	<div class="container">
 		<header class="hero">
-			<a href="index.php">
+			<a href="home.php">
 				<i class="fas fa-chevron-circle-left back-btn"></i>
 			</a>
 			<div class="hero-info">

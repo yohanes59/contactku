@@ -1,4 +1,5 @@
 <?php
+require 'session.php';
 include('koneksi.php');
 include('includes/header.php');
 ?>

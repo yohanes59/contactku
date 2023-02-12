@@ -16,7 +16,7 @@ foreach ($contact as $row) {
             </li>
 
             <li class="list__item">
-                <a href="#">
+                <a href="https://api.whatsapp.com/send?phone=<?=$row['phone'];?>&text=Halo,%20Saya%20mau%20mengantarkan%20paket%20makanan%20dari%20ci%20liana.">
                     <i class="fa fa-whatsapp"></i>
                 </a>
             </li>

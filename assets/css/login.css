@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/csss2?family=Montserrat+Alternates: wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	background: #7579e7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* form */
+form {
+	width: 50%;
+	border-radius: 8px;
+	box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, .1);
+	padding: 36px 24px;
+	background: #fff;
+}
+
+form h3 {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+form .form {
+	width: 100%;
+	position: relative;
+	margin: 48px 0;
+}
+
+form .form input {
+	width: 100%;
+	padding: 8px 0;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #eaeaea;
+	font-size: 18px;
+	position: relative;
+	background: transparent;
+	z-index: 10;
+	transition: border-bottom .3s;
+}
+
+form .form label {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	font-size: 18px;
+	transition: all .3s;
+	z-index: 9;
+}
+
+form .form input:focus,
+form .form input:valid {
+	border-bottom: 2px solid #28df99;
+}
+
+form .form input:focus ~ label,
+form .form input:valid ~ label  {
+	transform: translateY(-24px);
+	font-size: 16px;
+	color: #28df99;
+}
+
+form .form span.eye {
+	position: absolute;
+	right: 0;
+	top: 4px;
+	font-size: 18px;
+	cursor: pointer;
+	z-index: 11;
+}
+
+form button {
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	padding: 8px 24px;
+	background: #28df99;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-bottom: 24px;
+	transition: transform .3s;
+}
+
+form button:hover {
+	transform: translateY(-4px);
+}
+
+form p {
+	font-size: 16px;
+}
+
+form p a {
+	text-decoration: none;
+}
+
+form p a:hover {
+	text-decoration: underline;
+}
+
+
+@media (max-width: 576px) {
+	form {
+		width: 80%;
+	}
+}
+
+@media (max-width: 320px) {
+	form {
+		width: 90%;
+	}
+}
