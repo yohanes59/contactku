@@ -16,8 +16,8 @@ class contactModel{
 	}
 
 	public function selectAll(){
-		// $query = "SELECT * FROM tbl_contacts";
-		$query = "SELECT * FROM tbl_contacts ORDER BY name ASC";
+		$query = "SELECT * FROM tbl_contacts";
+		// $query = "SELECT * FROM tbl_contacts ORDER BY name ASC";
 		return $this->execute($query);
 	}
 
@@ -31,12 +31,8 @@ class contactModel{
 		return $this->execute($query);
 	}
 
-	// public function update($id, $fullname, $relation, $phone, $address) {
-	// 	$query = "UPDATE tbl_contacts SET name='$fullname', relation='$relation', phone='$phone', address='$address' WHERE id='$id'";
-	// 	return $this->execute($query);
-	// }
-	public function update($id, $fullname, $phone, $address) {
-		$query = "UPDATE tbl_contacts SET name='$fullname', phone='$phone', address='$address' WHERE id='$id'";
+	public function update($id, $fullname, $relation, $phone, $address) {
+		$query = "UPDATE tbl_contacts SET name='$fullname', relation='$relation', phone='$phone', address='$address' WHERE id='$id'";
 		return $this->execute($query);
 	}
 

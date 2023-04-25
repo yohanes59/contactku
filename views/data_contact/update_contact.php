@@ -14,12 +14,19 @@
 
 		<form method="POST" enctype="multipart/form-data">
 			<section class="contact-info">
-				<input type="hidden" name="contact_id" value="<?= $contact['id']; ?>">
+				<!-- <input type="hidden" name="contact_id" value="<?= $contact['id']; ?>"> -->
 				<div class="info-line">
 					<i class="fas fa-user icon-gradient"></i>
 					<input type="text" class="type" name="fullname" value="<?= $contact['name']; ?>">
 				</div>
-
+				<div class="info-line">
+					<i class="fas fa-handshake icon-gradient"></i>
+					<select name="relation" required class="type">
+						<?php while ($item = $this->model->fetch($data2)): ?>
+							<option value="<?= $item['relation'] ?>" <?= $item['relation'] == $contact['relation'] ? 'selected' : ''?>><?= $item['relation'] ?></option>
+						<?php endwhile ?>
+					</select>
+				</div>
 				<div class="info-line">
 					<i class="fas fa-phone icon-gradient"></i>
 					<input type="text" class="type" name="phone" value="<?= $contact['phone']; ?>">
@@ -32,7 +39,7 @@
 
 			<section class="button-container">
 				<div class="update-contact">
-					<i  class="fas fa-check-circle icon-gradient"></i>
+					<i class="fas fa-check-circle icon-gradient"></i>
 					<button type="submit" class="btn" name="edit">Save Contact</button>
 				</div>
 			</section>
@@ -48,7 +55,7 @@
 		</section>
 		
 		<?php
-		if(@$_POST['edit']) {
+		if(isset($_POST['edit'])) {
 			$main = new contactController();
 			$main->edit();
 		}

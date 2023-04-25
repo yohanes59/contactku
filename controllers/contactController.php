@@ -54,16 +54,21 @@ class contactController {
 		}
 	}
 
-	public function edit($id) {
-		$id = @$_POST['contact_id'];
-		$fullname = @$_POST['fullname'];
-		// $relation = @$_POST['relation'];
-		$phone = @$_POST['phone'];
-		$address = @$_POST['address'];
-
+	public function edit() {
+		$id = $_GET['id'];
+		$fullname = $_POST['fullname'];
+		$relation = $_POST['relation'];
+		$phone = $_POST['phone'];
+		$address = $_POST['address'];
+		$update = $this->model->update($id, $fullname, $relation, $phone, $address);
+		if($update) {
+			echo "<script type='text/javascript'>
+			alert('Data Berhasil di Ubah!');
+			window.location.href='?page=';
+			</script>";
+		}
 		// if($fullname != '' || $phone != '' || $relation != '' || $address != '') {
-		$update = $this->model->update($id, $fullname, $phone, $address);
-			// $update = $this->model->update($id, $fullname, $relation, $phone, $address);
+		// $update = $this->model->update($id, $fullname, $phone, $address);
 
 			// if ($update) {
 				// echo "<script type='text/javascript'>
@@ -94,12 +99,12 @@ class contactController {
 		// }
 	}
 
-		public function delete($id){
-			$delete = $this->model->delete($id);
-			echo "<script type='text/javascript'>
-			alert('Data Berhasil di Hapus!');
-			window.location.href='?page=';
-			</script>";
-		}
+	public function delete($id){
+		$delete = $this->model->delete($id);
+		echo "<script type='text/javascript'>
+		alert('Data Berhasil di Hapus!');
+		window.location.href='?page=';
+		</script>";
 	}
+}
 ?>
